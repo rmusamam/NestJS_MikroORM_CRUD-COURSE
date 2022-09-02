@@ -43,9 +43,9 @@ export class CourseService {
     return `This action returns a #${search} course`;
   }
 
-  async update(id: number, updateCourseDto: UpdateCourseDto) {
+  async update(id: uuidv4, updateCourseDto: UpdateCourseDto) {
 
-    const findCourse = await this.courseRepository.findOne({id});
+    const findCourse = await this.courseRepository.findOne({uuid:id});
 
     // if (!findCourse) {
     //   throw new HttpException('Book not found', HttpStatus.NOT_FOUND);
@@ -57,13 +57,19 @@ export class CourseService {
 
     await this.courseRepository.persist(findCourse).flush();
 
-    return findCourse;
-
-
-    return `This action updates a #${id} course`;
+    return `This action updates a #${findCourse} course`;
   }
 
-  remove(id: number) {
+  async remove(id: uuidv4) {
+
+    const findCourse = await this.courseRepository.nativeDelete({uuid:id});
+
+    console.log('this is find Query :',findCourse)
+
+    // await this.courseRepository.persist(findCourse).remove();
+    // await this.courseRepository.persist(findCourse).remove();
+
+
     return `This action removes a #${id} course`;
   }
 }
