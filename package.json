@@ -26,10 +26,12 @@
     "@mikro-orm/entity-generator": "^5.4.0",
     "@mikro-orm/nestjs": "^5.1.1",
     "@mikro-orm/postgresql": "^5.4.0",
+    "@mikro-orm/reflection": "^5.4.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^9.0.0",
+    "class-validator": "^0.13.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"

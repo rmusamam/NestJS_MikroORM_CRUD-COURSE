@@ -24,10 +24,10 @@ export class Course {
   @Property({ length: 6, defaultRaw: `now()` })
   createdAt!: Date;
 
-  @Property({ length: 6 })
+  @Property({ length: 6, defaultRaw: `now()` })
   updatedAt!: Date;
 
-  @Property({ length: 6 })
+  @Property({ length: 6, defaultRaw: `now()` })
   deletedAt!: Date;
 
   @Property({ length: 6 })
