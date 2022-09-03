@@ -24,4 +24,12 @@ export class CreateCourseDto {
     @IsString()
     endingDate:Date
 
+    startingDate!: Date;
+
+    createdAt:Date;
+
+    updatedAt!: Date;
+
+    deletedAt!: Date;
+
 }

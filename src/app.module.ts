@@ -3,6 +3,7 @@ import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CourseMaterialModule } from './course-material/course-material.module';
 import { CourseModule } from './course/course.module';
 
 @Module({
@@ -18,7 +19,7 @@ import { CourseModule } from './course/course.module';
     // debug: true,
     // loadStrategy: LoadStrategy.JOINED,
     metadataProvider: TsMorphMetadataProvider,
-  })  ],
+  }), CourseMaterialModule  ],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -19,6 +19,11 @@ export class CourseService {
 
   async create(createCourseDto: CreateCourseDto) {
     createCourseDto.uuid=uuidv4()
+    createCourseDto.startingDate=new Date()
+    createCourseDto.createdAt=new Date()
+    createCourseDto.updatedAt=new Date()
+    createCourseDto.deletedAt=new Date()
+
     const course = this.courseRepository.create(createCourseDto);
     // // wrap(book.author, true).__initialized = true;
     await this.courseRepository.persist(course).flush();
@@ -45,12 +50,9 @@ export class CourseService {
 
   async update(id: uuidv4, updateCourseDto: UpdateCourseDto) {
 
+    updateCourseDto.updatedAt= new Date()
+    console.log(updateCourseDto)
     const findCourse = await this.courseRepository.findOne({uuid:id});
-
-    // if (!findCourse) {
-    //   throw new HttpException('Book not found', HttpStatus.NOT_FOUND);
-    // }
-
 
     wrap(findCourse).assign(updateCourseDto);
     console.log('this is find Query :',findCourse)
