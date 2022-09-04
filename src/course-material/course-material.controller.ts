@@ -30,7 +30,7 @@ export class CourseMaterialController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: uuidv4,@Body() updateCourseMaterialDto: UpdateCourseMaterialDto) {
-    return this.courseMaterialService.remove(id,updateCourseMaterialDto);
+  remove(@Param('id') id: uuidv4) {
+    return this.courseMaterialService.remove(id);
   }
 }

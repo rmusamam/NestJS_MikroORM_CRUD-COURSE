@@ -63,7 +63,7 @@ export class CourseMaterialService {
     // return `This action updates a #${id} courseMaterial`;
   }
 
-  async remove(id: number,updateCourseMaterialDto) {
+  async remove(id: uuidv4) {
 
 
 
