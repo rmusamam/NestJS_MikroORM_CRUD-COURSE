@@ -73,9 +73,10 @@ export class CourseMaterialService {
     const findCourse = await this.courseMaterialRepository.findOne({uuid:id});
 
     // wrap(findCourse).assign(updateCourseMaterialDto);
+    findCourse.recordStatus=false
     console.log('this is find Query :',findCourse)
 
-    // await this.courseMaterialRepository.persist(findCourse).flush();
+    await this.courseMaterialRepository.persist(findCourse).flush();
 
     return `This action updates a #${findCourse} course`;
 
