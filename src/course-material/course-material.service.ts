@@ -68,14 +68,14 @@ export class CourseMaterialService {
 
 
 
-    updateCourseMaterialDto.updatedAt= new Date()
-    console.log(updateCourseMaterialDto)
+    // updateCourseMaterialDto.updatedAt= new Date()
+    // console.log(updateCourseMaterialDto)
     const findCourse = await this.courseMaterialRepository.findOne({uuid:id});
 
-    wrap(findCourse).assign(updateCourseMaterialDto);
+    // wrap(findCourse).assign(updateCourseMaterialDto);
     console.log('this is find Query :',findCourse)
 
-    await this.courseMaterialRepository.persist(findCourse).flush();
+    // await this.courseMaterialRepository.persist(findCourse).flush();
 
     return `This action updates a #${findCourse} course`;
 
