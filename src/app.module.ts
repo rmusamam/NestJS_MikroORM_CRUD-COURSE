@@ -9,13 +9,18 @@ import { CourseModule } from './course/course.module';
 @Module({
   imports: [CourseModule,MikroOrmModule.forRoot({
     type: 'postgresql',
-    host: 'localhost',
+    host: 'tft-lms-dev.postgres.database.azure.com',
     port: 5432,
-    user: 'postgres',
-    password: '1234',
+    user: 'tft_admin',
+    password: '5bpGF2pGYZB6wTs',
     dbName: 'tft_lms',
     entities: ['dist/**/*.entity.js'],
     entitiesTs: ['src/**/*.entity.ts'],
+    driverOptions: {
+      connection: {
+        ssl: true
+      }
+    },
     // debug: true,
     // loadStrategy: LoadStrategy.JOINED,
     metadataProvider: TsMorphMetadataProvider,
