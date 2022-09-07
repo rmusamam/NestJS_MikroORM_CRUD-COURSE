@@ -24,8 +24,7 @@ export class CourseMaterialController {
     }),
   }))
   create(@Body() createCourseMaterialDto: CreateCourseMaterialDto,@UploadedFile() file) {
-    
-    return this.courseMaterialService.create(createCourseMaterialDto,file);
+    return this.courseMaterialService.create(createCourseMaterialDto,file)
   }
 
   @Get()
